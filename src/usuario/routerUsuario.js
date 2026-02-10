@@ -7,7 +7,7 @@ const routerUser= express.Router();
 
 routerUser.get('/getUser',verifyToken,getUsuarios);
 routerUser.post('/authUser',authUser);
-routerUser.post('/addUser',verifyToken,addUser);
+routerUser.post('/addUser',addUser);
 routerUser.post('/updateUser/:id',updateUser);
 routerUser.post('/deleteUser/:id',deleteUser);
 
