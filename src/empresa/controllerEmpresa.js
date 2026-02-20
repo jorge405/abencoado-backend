@@ -84,8 +84,7 @@ export const infoEmpresa= async(req,res)=>{
     try {
         const decoded= jwt.verify(token,secretkey);
         const {uid,correo} = decoded;
-        console.log(uid)
-        console.log(correo)
+        
         const [rows]= await pool.query('select e.cod_empresa,e.razon_social,e.nombre_propietario,e.nro_testimonio,e.nro_poder,e.notaria,e.nit,e.fecha_inscripcion,e.direccion,e.municipio,e.zona,e.departamento,e.tipo_via,e.nombre_via,nro_puerta,e.referencias,e.actividad_principal,tp.tipo_empresa  from empresa e inner join usuario u on e.cod_empresa=u.cod_empresa inner join tip_empresa tp on tp.cod_tpEmpresa=e.cod_tpEmpresa where u.cod_usuario=? and u.correo_electronico=?',[uid,correo])
         console.log(rows)
         if (rows.length===0) {
@@ -97,3 +96,17 @@ export const infoEmpresa= async(req,res)=>{
         return res.status(500).json({msg:'error en el servidor',estado:'error'});
     }
 } 
+
+export const infoActividadSecundaria= async(req,res)=>{
+    const {cod_empresa}= req.params;
+    try {
+        const [rows]= await pool.query('select ac.cod_empresa,a.actividad_secundaria from actividad_secundaria a inner join actividades ac on a.cod_actividadS=ac.cod_actividadS inner join empresa e on e.cod_empresa=ac.cod_empresa where ac.cod_empresa=?',[cod_empresa]);
+        if(rows.length===0){
+            return res.status(404).json({msg:'no se encontraron datos',estado:'vacio'})
+        }
+        return res.status(200).json({msg:'se encontraron datos',estado:'ok',rows})
+    } catch (error) {
+        console.log('error en el servidor: ',error)
+        return res.status(500).json({msg:'error en el servidor',estado:'error'})
+    }
+}

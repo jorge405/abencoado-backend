@@ -1,5 +1,5 @@
 import express from 'express';
-import {getTipoEmpresa,addEmpresa,addActividad_secundaria,addActividades,infoEmpresa} from '../empresa/controllerEmpresa.js';
+import {getTipoEmpresa,addEmpresa,addActividad_secundaria,addActividades,infoEmpresa,infoActividadSecundaria} from '../empresa/controllerEmpresa.js';
 import {verifyToken} from '../utils/auth.js'
 const routerEmpresa= express.Router();
 
@@ -10,6 +10,7 @@ routerEmpresa.post('/addEmpresa',addEmpresa);
 routerEmpresa.post('/addActividadSecundaria',addActividad_secundaria);
 routerEmpresa.post('/addActividades',addActividades);
 routerEmpresa.post('/infoEmpresa',infoEmpresa);
+routerEmpresa.get('/infoActividadSecundaria/:cod_empresa',infoActividadSecundaria);
 //routerUser.post('/deleteUser/:id',deleteUser);
 
 

@@ -6,14 +6,14 @@ export const authUser= async(req,res)=>{
     const {correo,pass,nit}= req.body;
     try {
            
-        const [rows]= await pool.query('select u.cod_usuario,u.correo_electronico,u.pass,tp.tip_user from usuario u Inner join empresa e on u.cod_empresa=e.cod_empresa Inner join tip_user tp on tp.cod_tipUser=u.cod_tipUser  where u.correo_electronico= ? and u.pass=? and e.nit=? ',[correo,pass,nit]);
+        const [rows]= await pool.query('select u.cod_usuario,u.cod_empresa,u.correo_electronico,u.pass,tp.tip_user from usuario u Inner join empresa e on u.cod_empresa=e.cod_empresa Inner join tip_user tp on tp.cod_tipUser=u.cod_tipUser  where u.correo_electronico= ? and u.pass=? and e.nit=? ',[correo,pass,nit]);
         if(rows.length===0){
             
             return res.status(401).json({msg:'correo o contraseña incorrectos',estado:'error'})
         }else{
-            const {cod_usuario}= rows[0];   
-            console.log(cod_usuario)
-            const {token,expiresIn} = generateToken(cod_usuario,correo,pass);
+            const {cod_usuario,cod_empresa}= rows[0];   
+            
+            const {token,expiresIn} = generateToken(cod_usuario,correo,pass,cod_empresa);
                     
                     return res.status(200).json({
                         msg:'contraseña y correo correcto',
