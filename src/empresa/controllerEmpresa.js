@@ -110,3 +110,16 @@ export const infoActividadSecundaria= async(req,res)=>{
         return res.status(500).json({msg:'error en el servidor',estado:'error'})
     }
 }
+
+export const getEmpresas= async(req,res)=>{
+    try {
+        const [rows] = await pool.query('select e.cod_empresa,e.razon_social,e.nombre_propietario,e.nro_testimonio,e.nro_poder,e.notaria,e.nit,e.fecha_inscripcion,e.direccion,e.municipio,e.zona,e.departamento,e.tipo_via,e.nombre_via,nro_puerta,e.referencias,e.actividad_principal,tp.tipo_empresa  from empresa e inner join tip_empresa tp on tp.cod_tpEmpresa=e.cod_tpEmpresa');
+        if (rows.length===0) {
+            return res.status(202).json({msg:'no se encontraron registros',estado:'vacio'});
+        }
+        return res.status(200).json({msg:'registros encontrados',estado:'ok',rows})
+    } catch (error) {
+        console.log('error en el servidor: ',error)
+        return res.status(500).json({msg:'error en el servidor',estado:'error'})
+    }
+}

@@ -68,3 +68,24 @@ export const getCotizaciones= async(req,res)=>{
         })
     }
 }
+
+export const getCotizacionOne = async(req,res)=>{
+    const {fecha_comprobante} = req.body;
+    
+    try {
+        const [rows] = await pool.query('select cod_cotizacion,fecha,dolar,ufv from cotizaciones where fecha=?',[fecha_comprobante]);
+        if (rows.length===0) {
+            res.status(404).json({
+                estado:'vacio',
+                msg:'no se encontraron registros'
+            })
+        }
+        res.status(200).json({
+            estado:'ok',
+            msg:'cotizacion encontrada',
+            rows
+        })
+    } catch (error) {
+        console.log(error)
+    }
+} 
