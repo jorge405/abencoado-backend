@@ -5,6 +5,7 @@ import routerUser from './usuario/routerUsuario.js';
 import routerEmpresa from './empresa/routerEmpresa.js';
 import routerCuenta from './planCuenta/routerCuenta.js';
 import routerCotizaciones from './cotizaciones/routerCotizaciones.js';
+import routerLibroDiario from './libroDiario/routerLibroDiario.js';
 const app= express();
 
 
@@ -19,7 +20,11 @@ app.use('/abencoado',routerUser)
 app.use('/abencoado',routerEmpresa)
 app.use('/abencoado',routerCuenta)
 app.use('/abencoado',routerCotizaciones);
+app.use('/abencoado',routerLibroDiario);
 app.set('port',PORT)
 
+/*app.listen(app.get('port'),()=>{
+    console.log('aplicacion  backend abencoado corriendo en el puerto')
+}) */
 
 export default app;

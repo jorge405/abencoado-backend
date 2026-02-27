@@ -24,7 +24,7 @@ export const authUser= async(req,res)=>{
         }
     } catch (error) {
         console.log('problemas al autenticar el usuario: ',error)
-        return res.status(500).json({msg:'error en el servidor espere un momento'})
+        return res.status(500).json({msg:'error en el servidor espere un momento',estado:'error servidor'})
     }
 }
 

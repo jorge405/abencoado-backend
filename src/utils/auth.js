@@ -11,6 +11,7 @@ export const verifyToken =(req,res,next)=>{
     }
     jwt.verify(token,process.env.SECRET_KEY,(err,payload)=>{
         if(err){
+            console.log(err)
             return res.status(401).json({message:'token no valido o expirado'})
         }
         req.user=payload;

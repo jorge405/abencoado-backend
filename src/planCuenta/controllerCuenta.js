@@ -4,16 +4,16 @@ import jwt from 'jsonwebtoken';
 
 
 export const addNombrecuenta= async(req,res)=>{
-    const {nombre_cuenta,puct,cod_nivelCuenta,cod_tpcuenta } =req.body
+    const {nombre_cuenta,puct,cod_nivelCuenta,cod_tpcuenta,cod_empresa } =req.body
 
     try {
-        const [rows]= await pool.query('insert into nombre_cuenta(nombre_cuenta,puct,cod_nivelCuenta,cod_tpcuenta) values(?,?,?,?)',[nombre_cuenta,puct,cod_nivelCuenta,cod_tpcuenta])
+        const [rows]= await pool.query('insert into nombre_cuenta(nombre_cuenta,puct,cod_nivelCuenta,cod_tpcuenta) values(?,?,?,?,?)',[nombre_cuenta,puct,cod_nivelCuenta,cod_tpcuenta,cod_empresa])
         if (rows.affectedRows===0) {
             res.status(400).json({
                 msg:'hubo error al registrar nombre cuenta',
                 estado:'error'
             })
-        }
+        } 
         const cod_nombreCuenta=rows.insertId;
         res.status(200).json({
             msg:'nombre de cuenta registrado correctamente',

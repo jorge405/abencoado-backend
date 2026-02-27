@@ -6,7 +6,7 @@ export const getLibroDiario= async(req,res)=>{
     const {fecha_comprobante}= req.body;
     try {
         
-        const [rows] = await pool.query('select cod_comprobante,nro_comprobante,fecha_comprobante,glosa,metodo_pago,total_debe,total,haber,diferencia,cod_empresa from comprobante where fecha_comprobante= ?',[fecha_comprobante]);
+        const [rows] = await pool.query('select *, COUNT(*) OVER() as total_comprobante from comprobante where MONTH(fecha_comprobante)= MONTH(?) AND YEAR(fecha_comprobante)=YEAR(?)',[fecha_comprobante,fecha_comprobante]);
 
         if(rows.length===0){
             res.status(202).json({
@@ -14,10 +14,13 @@ export const getLibroDiario= async(req,res)=>{
                 estado:'vacio'
             })
         }
+        const total= rows[0].total_comprobante;
+        const comprobantes= rows.map(({total_comprobante,...resto})=> resto);
         res.status(200).json({
             msg:'registros encontrados',
             estado:'ok',
-            rows
+            total_comprobante:total,
+            comprobantes
         })
     } catch (error) {
         console.log('problemas con el servidor: ',error);
