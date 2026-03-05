@@ -1,11 +1,14 @@
 import express from 'express';
-import { getLibroDiario } from '../libroDiario/controllerLibroDiario.js';
+import { getLibroDiario,addlibroDiario,getlibroFecha,getAllLibro } from '../libroDiario/controllerLibroDiario.js';
 import {verifyToken} from '../utils/auth.js'
 const routerLibroDiario= express.Router();
 
 
 
 routerLibroDiario.post('/getComprobante',getLibroDiario);
+routerLibroDiario.post('/addComprobante',addlibroDiario);
+routerLibroDiario.post('/getlibroFecha',getlibroFecha);
+routerLibroDiario.get('/getallLibro/:cod_empresa',getAllLibro)
 //routerUser.post('/deleteUser/:id',deleteUser);
 
 
