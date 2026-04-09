@@ -6,6 +6,7 @@ export const pool = createPool({
     user:process.env.user || 'root',
     password:process.env.password ||'jorge1234',
     database: process.env.database || 'db_abencoado', 
+    timezone: 'local'
 })
 
 pool.on('connection',(connection)=>{

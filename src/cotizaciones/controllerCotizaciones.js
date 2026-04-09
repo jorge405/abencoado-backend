@@ -45,11 +45,13 @@ export const addCotizacion= async(req,res)=>{
 
 export const getCotizaciones= async(req,res)=>{
     
-    //const {gestion} = req.params
+    const {gestion} = req.params
     
+    const startDate = `${gestion}-01-01`;
+    const endDate = `${gestion}-12-31`;
     try {
-        //const [rows]= await pool.query('Select cod_cotizacion,fecha,dolar,ufv from cotizaciones where gestion=?',[gestion]);
-        const [rows] = await pool.query('Select cod_cotizacion,fecha,dolar,ufv from cotizaciones')
+        
+        const [rows] = await pool.query('Select cod_cotizacion,fecha,dolar,ufv from cotizaciones WHERE fecha BETWEEN ? AND ?',[startDate,endDate])
         if (rows.length===0) {
             res.status(404).json({
                 estado:'vacio',

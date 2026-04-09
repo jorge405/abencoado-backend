@@ -9,7 +9,7 @@ export const authUser= async(req,res)=>{
         const [rows]= await pool.query('select u.cod_usuario,u.cod_empresa,u.correo_electronico,u.pass,tp.tip_user from usuario u Inner join empresa e on u.cod_empresa=e.cod_empresa Inner join tip_user tp on tp.cod_tipUser=u.cod_tipUser  where u.correo_electronico= ? and u.pass=? and e.nit=? ',[correo,pass,nit]);
         if(rows.length===0){
             
-            return res.status(401).json({msg:'correo o contraseña incorrectos',estado:'error'})
+            return res.status(202).json({msg:'correo o contraseña incorrectos',estado:'vacio'})
         }else{
             const {cod_usuario,cod_empresa}= rows[0];   
             
@@ -86,5 +86,30 @@ export const deleteUser= async(req,res)=>{
     } catch (error) {
         console.log('problemas al inhabilitar el usuario:', error)  
         res.status(500).json({message:'error en el servidor espere un momento'})
+    }
+}
+
+export const getUserRegister= async (req,res)=>{
+    const {correo,pass}= req.body
+    try {
+        const [rows]= await pool.query('select correo_electronico,pass from usuario where correo_electronico=? and pass=?',[correo,pass])
+        if (rows.length===0) {
+            res.status(200).json({
+                status:'vacio',
+                msg:'correo y contraseña invalido'
+            })
+        }else if(rows.length>0){
+            res.status(200).json({
+                status:'ok',
+                msg:'correo y contraseña valido'
+            })
+        }
+        
+    } catch (error) {
+        console.log(error)
+        res.status(500).json({
+            status:'error',
+            msg:'problemas con el servidor'
+        })        
     }
 }

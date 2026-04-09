@@ -7,7 +7,7 @@ export const addNombrecuenta= async(req,res)=>{
     const {nombre_cuenta,puct,cod_nivelCuenta,cod_tpcuenta,cod_empresa } =req.body
 
     try {
-        const [rows]= await pool.query('insert into nombre_cuenta(nombre_cuenta,puct,cod_nivelCuenta,cod_tpcuenta) values(?,?,?,?,?)',[nombre_cuenta,puct,cod_nivelCuenta,cod_tpcuenta,cod_empresa])
+        const [rows]= await pool.query('insert into nombre_cuenta(nombre_cuenta,puct,cod_nivelCuenta,cod_tpcuenta,cod_empresa) values(?,?,?,?,?)',[nombre_cuenta,puct,cod_nivelCuenta,cod_tpcuenta,cod_empresa])
         if (rows.affectedRows===0) {
             res.status(400).json({
                 msg:'hubo error al registrar nombre cuenta',
@@ -30,9 +30,9 @@ export const addNombrecuenta= async(req,res)=>{
 }
 
 export const getNombrecuenta = async (req,res)=>{
-
+    const {cod_empresa} = req.params;
     try {
-        const [rows] = await pool.query('select cod_nombreCuenta,nombre_cuenta,puct,cod_nivelCuenta,cod_tpcuenta from nombre_cuenta');
+        const [rows] = await pool.query('select cod_nombreCuenta,nombre_cuenta,puct,cod_nivelCuenta,cod_tpcuenta from nombre_cuenta where cod_empresa=?',[cod_empresa]);
         if (rows.length===0) {
             res.status(204).json({
                 msg:'datos no encontrados',
@@ -96,5 +96,36 @@ export const getTipocuenta= async (req,res)=>{
             msg:'problemas con el servidor',
             estado:'error'
         })        
+    }
+}
+
+export const updateCuenta=async(req,res)=>{
+    const {nombre_cuenta,cod_nombreCuenta,cod_empresa} = req.body
+    
+    
+    try {
+            const [result] = await pool.query('update nombre_cuenta set nombre_cuenta=? where cod_nombreCuenta =? and cod_nivelCuenta=5 and cod_empresa=?',[nombre_cuenta,cod_nombreCuenta,cod_empresa]);
+
+            if (result.affectedRows===0) {
+                res.status(202).json({
+                    status:'vacio',
+                    msg:'datos no encontrados no actualizados'
+                })
+
+            
+            } 
+                res.status(200).json({
+                status:'ok',
+                msg:'datos actualizados correctamente'
+            })    
+            
+
+        
+    } catch (error) {
+        console.log('error en el servidor: ',error)
+        res.status(500).json({
+            status:'error',
+            msg:'error en el servidor'
+        })    
     }
 }

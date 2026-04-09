@@ -3,10 +3,10 @@ import { generateToken } from '../utils/generateToken.js';
 import jwt from 'jsonwebtoken';
 
 export const getLibroDiario= async(req,res)=>{
-    const {fecha_comprobante}= req.body;
+    const {fecha_comprobante,tipo_comprobante}= req.body;
     try {
         
-        const [rows] = await pool.query('select *, COUNT(*) OVER() as total_comprobante from comprobante where MONTH(fecha_comprobante)= MONTH(?) AND YEAR(fecha_comprobante)=YEAR(?)',[fecha_comprobante,fecha_comprobante]);
+        const [rows] = await pool.query('select *, COUNT(*) OVER() as total_comprobante from comprobante where MONTH(fecha_comprobante)= MONTH(?) AND YEAR(fecha_comprobante)=YEAR(?) AND tipo_comprobante=?',[fecha_comprobante,fecha_comprobante,tipo_comprobante]);
 
         if(rows.length===0){
             res.status(202).json({
@@ -16,7 +16,7 @@ export const getLibroDiario= async(req,res)=>{
         }
         
         const total_comprobantes= rows[0].total_comprobante;
-        const comprobantes= rows.map(({...resto})=> resto);
+        const comprobantes= rows.map(({total_comprobante,...resto})=> resto);
         res.status(200).json({
             msg:'registros encontrados',
             estado:'ok',
@@ -33,7 +33,7 @@ export const getLibroDiario= async(req,res)=>{
 }
 
 export const addlibroDiario= async(req,res)=>{
-const {nro_comprobante,tipo_comprobante,fecha_comprobante,cod_empresa,glosa,metodo_pago,total_debe,total_haber,estado,asiento} = req.body;
+const {nro_comprobante,tipo_comprobante,fecha_comprobante,cod_empresa,glosa,metodo_pago,total_debe,total_haber,estado,dolar,ufv,anio,razon_social,asiento} = req.body;
         // obtener una conexion  del pool para la transaccion
         const connection= await pool.getConnection();
     try {
@@ -41,11 +41,12 @@ const {nro_comprobante,tipo_comprobante,fecha_comprobante,cod_empresa,glosa,meto
          await connection.beginTransaction();
 
          // insertar comprobante 
-         const query='INSERT INTO comprobante (nro_comprobante,fecha_comprobante,glosa,metodo_pago,total_debe,total_haber,cod_empresa,estado,tipo_comprobante) values (?,?,?,?,?,?,?,?,?)'
-         const [rows]= await connection.query(query,[nro_comprobante,fecha_comprobante,glosa,metodo_pago,total_debe,total_haber,cod_empresa,estado,tipo_comprobante])
+         const query='INSERT INTO comprobante (nro_comprobante,fecha_comprobante,glosa,metodo_pago,total_debe,total_haber,cod_empresa,estado,tipo_comprobante,dolar,ufv,anio,razon_social) values (?,?,?,?,?,?,?,?,?,?,?,?,?)'
+         const [rows]= await connection.query(query,[nro_comprobante,fecha_comprobante,glosa,metodo_pago,total_debe,total_haber,cod_empresa,estado,tipo_comprobante,dolar,ufv,anio,razon_social])
         
          // obtener el ID recien creado
          const nuevoComprobante= rows.insertId;
+         
 
          // validar que vienen líneas de asiento
          if (!Array.isArray(asiento) || asiento.length === 0) {
@@ -87,6 +88,9 @@ const {nro_comprobante,tipo_comprobante,fecha_comprobante,cod_empresa,glosa,meto
     }
 } 
 
+export const updateLibroDiario= async(req,res)=>{
+    const {cod_comprobante,nro_comprobante,razon,fecha_comprobante,dolar,ufv,glosa,metodo_pago,tipo_comprobante,cod_asiento,cod_nombreCuenta,debe,haber} =req.body
+}
 export const getAllLibro= async(req,res)=>{
     const {cod_empresa}= req.params
     try {

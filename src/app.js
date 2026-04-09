@@ -6,6 +6,7 @@ import routerEmpresa from './empresa/routerEmpresa.js';
 import routerCuenta from './planCuenta/routerCuenta.js';
 import routerCotizaciones from './cotizaciones/routerCotizaciones.js';
 import routerLibroDiario from './libroDiario/routerLibroDiario.js';
+import routerLibroMayor from './libroMayor/routerLibroMayor.js';
 const app= express();
 
 
@@ -21,6 +22,7 @@ app.use('/abencoado',routerEmpresa)
 app.use('/abencoado',routerCuenta)
 app.use('/abencoado',routerCotizaciones);
 app.use('/abencoado',routerLibroDiario);
+app.use('/abencoado',routerLibroMayor);
 app.set('port',PORT)
 
 /*app.listen(app.get('port'),()=>{

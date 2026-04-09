@@ -7,7 +7,7 @@ const routerCotizaciones= express.Router();
 
 routerCotizaciones.post('/addCotizacion',addCotizacion);
 //routerCotizaciones.get('/getCotizaciones/:gestion',getCotizaciones);
-routerCotizaciones.get('/getCotizaciones',getCotizaciones);
+routerCotizaciones.get('/getCotizaciones/:gestion',getCotizaciones);
 routerCotizaciones.post('/getCotizacionOne',getCotizacionOne);
 
 
