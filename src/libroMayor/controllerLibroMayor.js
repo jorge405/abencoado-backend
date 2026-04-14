@@ -65,7 +65,7 @@ export const getLibroMayorOne= async(req,res)=>{
 
 const {cod_empresa,cod_comprobante}= req.body
     try {
-        const [rows] = await pool.query('select * from libroMayorOne where cod_empresa=? and cod_comprobante=?',[cod_empresa,cod_comprobante]);
+        const [rows] = await pool.query('select * from libromayorOne where cod_empresa=? and cod_comprobante=?',[cod_empresa,cod_comprobante]);
 
         if (rows.length===0) {
             res.status(202).json({
@@ -86,7 +86,8 @@ const {cod_empresa,cod_comprobante}= req.body
         console.log('ha ocurrido un error :',error)
         res.status(500).json({
             status:'error',
-            msg:'ha ocurrido un error en el servidor'
+            msg:'ha ocurrido un error en el servidor',
+            
         })
     }    
 
