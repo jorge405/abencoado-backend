@@ -29,29 +29,47 @@ export const addNombrecuenta= async(req,res)=>{
     }
 }
 
-export const getNombrecuenta = async (req,res)=>{
-    const {cod_empresa} = req.params;
-    try {
-        const [rows] = await pool.query('select cod_nombreCuenta,nombre_cuenta,puct,cod_nivelCuenta,cod_tpcuenta from nombre_cuenta where cod_empresa=?',[cod_empresa]);
-        if (rows.length===0) {
-            res.status(204).json({
-                msg:'datos no encontrados',
-                estado:'vacio'
-            })
-        }
-        res.status(200).json({
-            msg:'datos encontrados',
-            estado:'ok',
-            rows
-        })
-    } catch (error) {
-        console.log('error en el servidor: ',error)
-        res.status(500).json({
-            msg:'problemas con el servidor',
-            estado:'ok'
-        })
+export const getNombrecuenta = async (req, res) => {
+    const { cod_empresa } = req.params;
+
+    // Validación inicial
+    // Nota: req.params siempre trae strings, conviene convertir o comparar con ==
+    if (!cod_empresa || cod_empresa == 0) { 
+        return res.status(204).json({
+            msg: 'no se encontro la empresa',
+            status: 'null'
+        });
     }
-}
+
+    try {
+        const [rows] = await pool.query(
+            'select cod_nombreCuenta, nombre_cuenta, puct, cod_nivelCuenta, cod_tpcuenta from nombre_cuenta where cod_empresa = ?',
+            [cod_empresa]
+        );
+
+        if (rows.length === 0) {
+            // AGREGAR RETURN AQUÍ PARA DETENER LA FUNCIÓN
+            return res.status(204).json({
+                msg: 'datos no encontrados',
+                estado: 'vacio'
+            });
+        }
+
+        // Si llega aquí, es porque hay datos y no entró al if anterior
+        res.status(200).json({
+            msg: 'datos encontrados',
+            estado: 'ok',
+            rows
+        });
+
+    } catch (error) {
+        console.error('error en el servidor: ', error);
+        res.status(500).json({
+            msg: 'problemas con el servidor',
+            estado: 'error' // Cambiado de 'ok' a 'error' por lógica
+        });
+    }
+};
 
 export const getNivelcuenta= async (req,res)=>{
     try {

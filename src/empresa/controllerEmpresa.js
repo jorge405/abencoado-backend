@@ -2,6 +2,9 @@ import {pool} from '../DB/connection.js';
 import { generateToken } from '../utils/generateToken.js';
 import jwt from 'jsonwebtoken';
 
+import XLSX from 'xlsx';
+import {unlink} from 'fs/promises'
+
 export const getTipoEmpresa= async (req,res)=>{
 
     try {
@@ -72,12 +75,12 @@ export const addEmpresa = async (req, res) => {
             await connection.query(queryUser, [correo_electronico, pass, 2, cod_empresa]);
 
             // 5. Clonar el Plan de Cuentas Global a la nueva empresa
-            const consultaPlan = `
+            /*const consultaPlan = `
                 INSERT INTO nombre_cuenta (nombre_cuenta, puct, cod_nivelCuenta, cod_tpcuenta, cod_empresa) 
                 SELECT nombre_cuenta, puct, cod_nivelCuenta, cod_tpcuenta, ? 
-                FROM plancuenta_global`;
+                FROM plancuenta_global`; */
             
-            await connection.query(consultaPlan, [cod_empresa]);
+            //await connection.query(consultaPlan, [cod_empresa]);
 
             // 6. Si todo salió bien, confirmamos los cambios
             await connection.commit();
@@ -113,6 +116,51 @@ export const addEmpresa = async (req, res) => {
     }
 };
 
+export const addPuct = async(req,res)=>{
+    const filePath= req.file?.path;
+    const connection= await pool.getConnection();
+
+    try {
+        const {cod_empresa} = req.body;
+        console.log(cod_empresa)
+        if (!req.file) {
+                return res.status(400).json({msg:'no se subio el archivo', status:'vacio'})
+        }
+        const workbook = XLSX.readFile(filePath);
+        const workSheet=workbook.Sheets[workbook.SheetNames[0]];
+        const rawData= XLSX.utils.sheet_to_json(workSheet);
+        const datosFinales = rawData.map(fila => [
+            fila.nombre_cuenta,
+            fila.puct,
+            fila.cod_nivelCuenta,
+            fila.cod_tpcuenta,
+            cod_empresa
+        ]);
+
+        // iniciar transaccion
+        await connection.beginTransaction();
+
+        const query=`INSERT INTO nombre_cuenta (nombre_cuenta,puct,cod_nivelCuenta,cod_tpcuenta,cod_empresa) VALUES ?`;
+        const [result] = await connection.query(query,[datosFinales]);
+        // si todo es correcto confirmamos los cambios permanentemente
+        await connection.commit();
+        // borramos el archivo temporal de la carpeta uploads
+        await unlink(filePath)
+        res.status(200).json({
+            msg:'importacion realizada con exito puct subido correctamente',
+            status:'ok'
+        }) 
+    } catch (error) {
+        // SI OCURRE UN ERROR: Deshacemos cualquier cambio en la DB
+        await connection.rollback()
+        console.log('error en el proceso de importacion: ',error)
+        if (filePath) await unlink(filePath).catch(() => {});
+        res.status(500).json({ msg: 'Error en el servidor',status:'error' });
+    }finally{
+        // LIBERAR CONEXIÓN: Siempre debe volver al pool para que otros la usen
+        connection.release();
+    }
+}
 export const infoEmpresa= async(req,res)=>{
     const {token} = req.body;
         const secretkey= process.env.SECRET_KEY;

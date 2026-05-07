@@ -91,3 +91,142 @@ export const getCotizacionOne = async(req,res)=>{
         console.log(error)
     }
 } 
+
+export const addConfiguracion = async (req, res) => {
+    const { firmas } = req.body; // Se espera que 'firmas' sea un array: ["a", "b"]
+
+    try {
+        // Usamos JSON_MERGE_PRESERVE para combinar el array actual con el nuevo
+        // CAST(? AS JSON) asegura que MySQL entienda que mandas un array y no un string
+        const query = `
+            UPDATE configuraciones 
+            SET firmas = JSON_MERGE_PRESERVE(firmas, CAST(? AS JSON)) 
+            WHERE cod_configuracion = 1
+        `;
+
+        // Importante: Convertir el array a string JSON para que el driver lo pase correctamente
+        const [result] = await pool.query(query, [JSON.stringify(firmas)]);
+
+        if (result.affectedRows === 0) {
+            return res.status(404).json({
+                status: 'vacio',
+                msg: 'No se encontró la configuración'
+            });
+        }
+
+        res.status(200).json({
+            status: 'ok',
+            msg: 'Elementos agregados exitosamente al array'
+        });
+
+    } catch (error) {
+        console.log("Error en MySQL:", error);
+        res.status(500).json({
+            status: 'error',
+            msg: 'Error al intentar agregar las firmas'
+        });
+    }
+};
+
+export const getConfiguracion= async(req,res)=>{
+
+    try {
+        
+        const [rows]= await pool.query('select cod_configuracion,mostrarHora,mostrarFecha,firmas from configuraciones');
+        if (rows.length===0) {
+            res.status(202).json({
+                status:'vacio',
+                msg:'no se encontraron configuraciones',
+            })
+        }else if(rows.length>=1){
+            res.status(200).json({ 
+                status:'ok',
+                msg:'configuraciones encontradas',
+                rows
+            })
+        }
+    } catch (error) {
+        console.log('ha ocurrido un error en el servidor:',error)
+        res.status(500).json({
+            status:'error',
+            msg:'error en el servidor,espere un momento'
+        })
+        
+    }
+}
+
+export const updateConfiguracion = async (req, res) => {
+    // Si un campo no llega en el body, lo tratamos como null para COALESCE
+    const { mostrarHora = null, mostrarFecha = null } = req.body;
+
+    try {
+        // 1. Convertimos el array de firmas a una cadena JSON si existe
+        //const firmasJson = firmas ? JSON.stringify(firmas) : null;
+
+        // 2. Usamos COALESCE en la consulta SQL. 
+        // Si el primer parámetro es NULL, tomará el valor actual de la columna.
+        const query = `
+            UPDATE configuraciones 
+            SET mostrarHora = COALESCE(?, mostrarHora), 
+                mostrarFecha = COALESCE(?, mostrarFecha) 
+            WHERE cod_configuracion = 1
+        `;
+
+        const [result] = await pool.query(query, [mostrarHora, mostrarFecha]);
+
+        if (result.affectedRows === 0) {
+            return res.status(202).json({
+                status: 'vacio',
+                msg: 'No se encontró el registro o no hubo cambios necesarios'
+            });
+        }
+
+        res.status(200).json({
+            status: 'ok',
+            msg: 'Datos actualizados correctamente'
+        });
+
+    } catch (error) {
+        console.error("Error al actualizar:", error);
+        res.status(500).json({
+            status: 'error',
+            msg: 'Error en el servidor'
+        });
+    }
+};
+
+export const deleteFirma = async (req, res) => {
+    // Recibimos el índice del elemento a eliminar (ej: 0, 1, 2...)
+    const { index } = req.body; 
+
+    try {
+        // Validamos que el índice sea un número
+        if (typeof index !== 'number') {
+            return res.status(400).json({ msg: 'Se requiere el índice numérico' });
+        }
+
+        // Construimos la ruta dinámicamente: $[0], $[1], etc.
+        const path = `$[${index}]`;
+
+        const query = `
+            UPDATE configuraciones 
+            SET firmas = JSON_REMOVE(firmas, ?) 
+            WHERE cod_configuracion = 1
+        `;
+
+        const [result] = await pool.query(query, [path]);
+
+        if (result.affectedRows === 0) {
+            return res.status(404).json({ msg: 'Configuración no encontrada',status:'vacio' });
+        }
+
+        res.status(200).json({
+            status: 'ok',
+            msg: `Elemento en el índice ${index} eliminado`
+        });
+
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ status: 'error', msg: 'Error al eliminar la firma' });
+    }
+};
