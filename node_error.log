@@ -3,298 +3,61 @@ Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the cli
     at ServerResponse.header (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:686:10)
     at ServerResponse.send (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:163:12)
     at ServerResponse.json (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:252:15)
-    at getCotizaciones (file:///C:/Users/JORGE%201305/Desktop/abencoado-backend/src/cotizaciones/controllerCotizaciones.js:67:25)
+    at getAllLibro (file:///C:/Users/JORGE%201305/Desktop/abencoado-backend/src/libroDiario/controllerLibroDiario.js:158:25)
     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
-Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
-    at ServerResponse.setHeader (node:_http_outgoing:700:11)
-    at ServerResponse.header (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:686:10)
-    at ServerResponse.send (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:163:12)
-    at ServerResponse.json (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:252:15)
-    at getCotizaciones (file:///C:/Users/JORGE%201305/Desktop/abencoado-backend/src/cotizaciones/controllerCotizaciones.js:67:25)
-    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
-Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
-    at ServerResponse.setHeader (node:_http_outgoing:700:11)
-    at ServerResponse.header (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:686:10)
-    at ServerResponse.send (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:163:12)
-    at ServerResponse.json (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:252:15)
-    at getAllLibro (file:///C:/Users/JORGE%201305/Desktop/abencoado-backend/src/libroDiario/controllerLibroDiario.js:116:25)
-    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
-Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
-    at ServerResponse.setHeader (node:_http_outgoing:700:11)
-    at ServerResponse.header (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:686:10)
-    at ServerResponse.send (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:163:12)
-    at ServerResponse.json (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:252:15)
-    at getLibroDiario (file:///C:/Users/JORGE%201305/Desktop/abencoado-backend/src/libroDiario/controllerLibroDiario.js:28:25)
-    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
-Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
-    at ServerResponse.setHeader (node:_http_outgoing:700:11)
-    at ServerResponse.header (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:686:10)
-    at ServerResponse.send (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:163:12)
-    at ServerResponse.json (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:252:15)
-    at getLibroMayor (file:///C:/Users/JORGE%201305/Desktop/abencoado-backend/src/libroMayor/controllerLibroMayor.js:57:25)
-    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
-Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
-    at ServerResponse.setHeader (node:_http_outgoing:700:11)
-    at ServerResponse.header (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:686:10)
-    at ServerResponse.send (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:163:12)
-    at ServerResponse.json (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:252:15)
-    at getLibroDiario (file:///C:/Users/JORGE%201305/Desktop/abencoado-backend/src/libroDiario/controllerLibroDiario.js:28:25)
-    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
-Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
-    at ServerResponse.setHeader (node:_http_outgoing:700:11)
-    at ServerResponse.header (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:686:10)
-    at ServerResponse.send (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:163:12)
-    at ServerResponse.json (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:252:15)
-    at getLibroDiario (file:///C:/Users/JORGE%201305/Desktop/abencoado-backend/src/libroDiario/controllerLibroDiario.js:28:25)
-    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
-Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
-    at ServerResponse.setHeader (node:_http_outgoing:700:11)
-    at ServerResponse.header (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:686:10)
-    at ServerResponse.send (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:163:12)
-    at ServerResponse.json (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:252:15)
-    at getLibroDiario (file:///C:/Users/JORGE%201305/Desktop/abencoado-backend/src/libroDiario/controllerLibroDiario.js:28:25)
-    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
-Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
-    at ServerResponse.setHeader (node:_http_outgoing:700:11)
-    at ServerResponse.header (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:686:10)
-    at ServerResponse.send (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:163:12)
-    at ServerResponse.json (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:252:15)
-    at getLibroDiario (file:///C:/Users/JORGE%201305/Desktop/abencoado-backend/src/libroDiario/controllerLibroDiario.js:28:25)
-    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
-Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
-    at ServerResponse.setHeader (node:_http_outgoing:700:11)
-    at ServerResponse.header (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:686:10)
-    at ServerResponse.send (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:163:12)
-    at ServerResponse.json (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:252:15)
-    at getLibroMayor (file:///C:/Users/JORGE%201305/Desktop/abencoado-backend/src/libroMayor/controllerLibroMayor.js:57:25)
-    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
-Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
-    at ServerResponse.setHeader (node:_http_outgoing:700:11)
-    at ServerResponse.header (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:686:10)
-    at ServerResponse.send (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:163:12)
-    at ServerResponse.json (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:252:15)
-    at getLibroDiario (file:///C:/Users/JORGE%201305/Desktop/abencoado-backend/src/libroDiario/controllerLibroDiario.js:28:25)
-    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
-Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
-    at ServerResponse.setHeader (node:_http_outgoing:700:11)
-    at ServerResponse.header (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:686:10)
-    at ServerResponse.send (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:163:12)
-    at ServerResponse.json (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:252:15)
-    at getLibroDiario (file:///C:/Users/JORGE%201305/Desktop/abencoado-backend/src/libroDiario/controllerLibroDiario.js:28:25)
-    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
-Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
-    at ServerResponse.setHeader (node:_http_outgoing:700:11)
-    at ServerResponse.header (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:686:10)
-    at ServerResponse.send (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:163:12)
-    at ServerResponse.json (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:252:15)
-    at getLibroDiario (file:///C:/Users/JORGE%201305/Desktop/abencoado-backend/src/libroDiario/controllerLibroDiario.js:28:25)
-    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
-Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
-    at ServerResponse.setHeader (node:_http_outgoing:700:11)
-    at ServerResponse.header (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:686:10)
-    at ServerResponse.send (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:163:12)
-    at ServerResponse.json (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:252:15)
-    at getCotizaciones (file:///C:/Users/JORGE%201305/Desktop/abencoado-backend/src/cotizaciones/controllerCotizaciones.js:67:25)
-    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
-Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
-    at ServerResponse.setHeader (node:_http_outgoing:700:11)
-    at ServerResponse.header (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:686:10)
-    at ServerResponse.send (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:163:12)
-    at ServerResponse.json (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:252:15)
-    at getCotizaciones (file:///C:/Users/JORGE%201305/Desktop/abencoado-backend/src/cotizaciones/controllerCotizaciones.js:67:25)
-    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
-Error: Incorrect parameter count in the call to native function 'JSON_ARRAY_APPEND'
-    at PromisePool.query [90m(C:\Users\JORGE 1305\Desktop\abencoado-backend\[39mnode_modules\[4mmysql2[24m\lib\promise\pool.js:36:22[90m)[39m
-    at addConfiguracion [90m(file:///C:/Users/JORGE%201305/Desktop/abencoado-backend/[39msrc/cotizaciones/controllerCotizaciones.js:107:37[90m)[39m
-    at Layer.handleRequest [90m(C:\Users\JORGE 1305\Desktop\abencoado-backend\[39mnode_modules\[4mrouter[24m\lib\layer.js:152:17[90m)[39m
-    at next [90m(C:\Users\JORGE 1305\Desktop\abencoado-backend\[39mnode_modules\[4mrouter[24m\lib\route.js:157:13[90m)[39m
-    at Route.dispatch [90m(C:\Users\JORGE 1305\Desktop\abencoado-backend\[39mnode_modules\[4mrouter[24m\lib\route.js:117:3[90m)[39m
-    at handle [90m(C:\Users\JORGE 1305\Desktop\abencoado-backend\[39mnode_modules\[4mrouter[24m\index.js:435:11[90m)[39m
-    at Layer.handleRequest [90m(C:\Users\JORGE 1305\Desktop\abencoado-backend\[39mnode_modules\[4mrouter[24m\lib\layer.js:152:17[90m)[39m
-    at [90mC:\Users\JORGE 1305\Desktop\abencoado-backend\[39mnode_modules\[4mrouter[24m\index.js:295:15
-    at processParams [90m(C:\Users\JORGE 1305\Desktop\abencoado-backend\[39mnode_modules\[4mrouter[24m\index.js:582:12[90m)[39m
-    at next [90m(C:\Users\JORGE 1305\Desktop\abencoado-backend\[39mnode_modules\[4mrouter[24m\index.js:291:5[90m)[39m {
-  code: [32m'ER_WRONG_PARAMCOUNT_TO_NATIVE_FCT'[39m,
-  errno: [33m1582[39m,
-  sql: [32m'\n'[39m +
-    [32m'            UPDATE configuraciones \n'[39m +
-    [32m"            SET firmas = JSON_ARRAY_APPEND(firmas, '$', 'cliente', 'comerciante') \n"[39m +
-    [32m'            WHERE cod_configuracion = 1\n'[39m +
-    [32m'        '[39m,
-  sqlState: [32m'42000'[39m,
-  sqlMessage: [32m"Incorrect parameter count in the call to native function 'JSON_ARRAY_APPEND'"[39m
-}
-Error: Incorrect parameter count in the call to native function 'JSON_ARRAY_APPEND'
-    at PromisePool.query [90m(C:\Users\JORGE 1305\Desktop\abencoado-backend\[39mnode_modules\[4mmysql2[24m\lib\promise\pool.js:36:22[90m)[39m
-    at addConfiguracion [90m(file:///C:/Users/JORGE%201305/Desktop/abencoado-backend/[39msrc/cotizaciones/controllerCotizaciones.js:107:37[90m)[39m
-    at Layer.handleRequest [90m(C:\Users\JORGE 1305\Desktop\abencoado-backend\[39mnode_modules\[4mrouter[24m\lib\layer.js:152:17[90m)[39m
-    at next [90m(C:\Users\JORGE 1305\Desktop\abencoado-backend\[39mnode_modules\[4mrouter[24m\lib\route.js:157:13[90m)[39m
-    at Route.dispatch [90m(C:\Users\JORGE 1305\Desktop\abencoado-backend\[39mnode_modules\[4mrouter[24m\lib\route.js:117:3[90m)[39m
-    at handle [90m(C:\Users\JORGE 1305\Desktop\abencoado-backend\[39mnode_modules\[4mrouter[24m\index.js:435:11[90m)[39m
-    at Layer.handleRequest [90m(C:\Users\JORGE 1305\Desktop\abencoado-backend\[39mnode_modules\[4mrouter[24m\lib\layer.js:152:17[90m)[39m
-    at [90mC:\Users\JORGE 1305\Desktop\abencoado-backend\[39mnode_modules\[4mrouter[24m\index.js:295:15
-    at processParams [90m(C:\Users\JORGE 1305\Desktop\abencoado-backend\[39mnode_modules\[4mrouter[24m\index.js:582:12[90m)[39m
-    at next [90m(C:\Users\JORGE 1305\Desktop\abencoado-backend\[39mnode_modules\[4mrouter[24m\index.js:291:5[90m)[39m {
-  code: [32m'ER_WRONG_PARAMCOUNT_TO_NATIVE_FCT'[39m,
-  errno: [33m1582[39m,
-  sql: [32m'\n'[39m +
-    [32m'            UPDATE configuraciones \n'[39m +
-    [32m"            SET firmas = JSON_ARRAY_APPEND(firmas, '$', 'cliente', 'comerciante') \n"[39m +
-    [32m'            WHERE cod_configuracion = 1\n'[39m +
-    [32m'        '[39m,
-  sqlState: [32m'42000'[39m,
-  sqlMessage: [32m"Incorrect parameter count in the call to native function 'JSON_ARRAY_APPEND'"[39m
-}
-Error: Incorrect parameter count in the call to native function 'JSON_ARRAY_APPEND'
-    at PromisePool.query [90m(C:\Users\JORGE 1305\Desktop\abencoado-backend\[39mnode_modules\[4mmysql2[24m\lib\promise\pool.js:36:22[90m)[39m
-    at addConfiguracion [90m(file:///C:/Users/JORGE%201305/Desktop/abencoado-backend/[39msrc/cotizaciones/controllerCotizaciones.js:107:37[90m)[39m
-    at Layer.handleRequest [90m(C:\Users\JORGE 1305\Desktop\abencoado-backend\[39mnode_modules\[4mrouter[24m\lib\layer.js:152:17[90m)[39m
-    at next [90m(C:\Users\JORGE 1305\Desktop\abencoado-backend\[39mnode_modules\[4mrouter[24m\lib\route.js:157:13[90m)[39m
-    at Route.dispatch [90m(C:\Users\JORGE 1305\Desktop\abencoado-backend\[39mnode_modules\[4mrouter[24m\lib\route.js:117:3[90m)[39m
-    at handle [90m(C:\Users\JORGE 1305\Desktop\abencoado-backend\[39mnode_modules\[4mrouter[24m\index.js:435:11[90m)[39m
-    at Layer.handleRequest [90m(C:\Users\JORGE 1305\Desktop\abencoado-backend\[39mnode_modules\[4mrouter[24m\lib\layer.js:152:17[90m)[39m
-    at [90mC:\Users\JORGE 1305\Desktop\abencoado-backend\[39mnode_modules\[4mrouter[24m\index.js:295:15
-    at processParams [90m(C:\Users\JORGE 1305\Desktop\abencoado-backend\[39mnode_modules\[4mrouter[24m\index.js:582:12[90m)[39m
-    at next [90m(C:\Users\JORGE 1305\Desktop\abencoado-backend\[39mnode_modules\[4mrouter[24m\index.js:291:5[90m)[39m {
-  code: [32m'ER_WRONG_PARAMCOUNT_TO_NATIVE_FCT'[39m,
-  errno: [33m1582[39m,
-  sql: [32m'\n'[39m +
-    [32m'            UPDATE configuraciones \n'[39m +
-    [32m"            SET firmas = JSON_ARRAY_APPEND(firmas, '$', 'cliente', 'comerciante') \n"[39m +
-    [32m'            WHERE cod_configuracion = 1\n'[39m +
-    [32m'        '[39m,
-  sqlState: [32m'42000'[39m,
-  sqlMessage: [32m"Incorrect parameter count in the call to native function 'JSON_ARRAY_APPEND'"[39m
-}
-Error: Incorrect parameter count in the call to native function 'JSON_ARRAY_APPEND'
-    at PromisePool.query [90m(C:\Users\JORGE 1305\Desktop\abencoado-backend\[39mnode_modules\[4mmysql2[24m\lib\promise\pool.js:36:22[90m)[39m
-    at addConfiguracion [90m(file:///C:/Users/JORGE%201305/Desktop/abencoado-backend/[39msrc/cotizaciones/controllerCotizaciones.js:107:37[90m)[39m
-    at Layer.handleRequest [90m(C:\Users\JORGE 1305\Desktop\abencoado-backend\[39mnode_modules\[4mrouter[24m\lib\layer.js:152:17[90m)[39m
-    at next [90m(C:\Users\JORGE 1305\Desktop\abencoado-backend\[39mnode_modules\[4mrouter[24m\lib\route.js:157:13[90m)[39m
-    at Route.dispatch [90m(C:\Users\JORGE 1305\Desktop\abencoado-backend\[39mnode_modules\[4mrouter[24m\lib\route.js:117:3[90m)[39m
-    at handle [90m(C:\Users\JORGE 1305\Desktop\abencoado-backend\[39mnode_modules\[4mrouter[24m\index.js:435:11[90m)[39m
-    at Layer.handleRequest [90m(C:\Users\JORGE 1305\Desktop\abencoado-backend\[39mnode_modules\[4mrouter[24m\lib\layer.js:152:17[90m)[39m
-    at [90mC:\Users\JORGE 1305\Desktop\abencoado-backend\[39mnode_modules\[4mrouter[24m\index.js:295:15
-    at processParams [90m(C:\Users\JORGE 1305\Desktop\abencoado-backend\[39mnode_modules\[4mrouter[24m\index.js:582:12[90m)[39m
-    at next [90m(C:\Users\JORGE 1305\Desktop\abencoado-backend\[39mnode_modules\[4mrouter[24m\index.js:291:5[90m)[39m {
-  code: [32m'ER_WRONG_PARAMCOUNT_TO_NATIVE_FCT'[39m,
-  errno: [33m1582[39m,
-  sql: [32m'\n'[39m +
-    [32m'            UPDATE configuraciones \n'[39m +
-    [32m"            SET firmas = JSON_ARRAY_APPEND(firmas, '$', 'cliente', 'comerciante') \n"[39m +
-    [32m'            WHERE cod_configuracion = 1\n'[39m +
-    [32m'        '[39m,
-  sqlState: [32m'42000'[39m,
-  sqlMessage: [32m"Incorrect parameter count in the call to native function 'JSON_ARRAY_APPEND'"[39m
-}
-Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
-    at ServerResponse.setHeader (node:_http_outgoing:700:11)
-    at ServerResponse.header (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:686:10)
-    at ServerResponse.send (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:163:12)
-    at ServerResponse.json (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:252:15)
-    at getLibroDiario (file:///C:/Users/JORGE%201305/Desktop/abencoado-backend/src/libroDiario/controllerLibroDiario.js:28:25)
-    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
-Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
-    at ServerResponse.setHeader (node:_http_outgoing:700:11)
-    at ServerResponse.header (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:686:10)
-    at ServerResponse.send (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:163:12)
-    at ServerResponse.json (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:252:15)
-    at getLibroDiario (file:///C:/Users/JORGE%201305/Desktop/abencoado-backend/src/libroDiario/controllerLibroDiario.js:28:25)
-    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
-Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
-    at ServerResponse.setHeader (node:_http_outgoing:700:11)
-    at ServerResponse.header (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:686:10)
-    at ServerResponse.json (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:249:10)
-    at getNombrecuenta (file:///C:/Users/JORGE%201305/Desktop/abencoado-backend/src/planCuenta/controllerCuenta.js:49:25)
-    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
-Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
-    at ServerResponse.setHeader (node:_http_outgoing:700:11)
-    at ServerResponse.header (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:686:10)
-    at ServerResponse.json (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:249:10)
-    at getNombrecuenta (file:///C:/Users/JORGE%201305/Desktop/abencoado-backend/src/planCuenta/controllerCuenta.js:49:25)
-    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
-MulterError: Unexpected field
-    at wrappedFileFilter (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\multer\index.js:41:19)
-    at Multipart.<anonymous> (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\multer\lib\make-middleware.js:183:7)
-    at Multipart.emit (node:events:518:28)
-    at HeaderParser.cb (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\busboy\lib\types\multipart.js:358:14)
-    at HeaderParser.push (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\busboy\lib\types\multipart.js:162:20)
-    at SBMH.ssCb [as _cb] (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\busboy\lib\types\multipart.js:394:37)
-    at feed (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\streamsearch\lib\sbmh.js:219:14)
-    at SBMH.push (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\streamsearch\lib\sbmh.js:104:16)
-    at Multipart._write (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\busboy\lib\types\multipart.js:567:19)
-    at writeOrBuffer (node:internal/streams/writable:572:12)
-MulterError: Unexpected field
-    at wrappedFileFilter (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\multer\index.js:41:19)
-    at Multipart.<anonymous> (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\multer\lib\make-middleware.js:183:7)
-    at Multipart.emit (node:events:518:28)
-    at HeaderParser.cb (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\busboy\lib\types\multipart.js:358:14)
-    at HeaderParser.push (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\busboy\lib\types\multipart.js:162:20)
-    at SBMH.ssCb [as _cb] (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\busboy\lib\types\multipart.js:394:37)
-    at feed (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\streamsearch\lib\sbmh.js:219:14)
-    at SBMH.push (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\streamsearch\lib\sbmh.js:104:16)
-    at Multipart._write (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\busboy\lib\types\multipart.js:567:19)
-    at writeOrBuffer (node:internal/streams/writable:572:12)
-Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
-    at ServerResponse.setHeader (node:_http_outgoing:700:11)
-    at ServerResponse.header (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:686:10)
-    at ServerResponse.json (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:249:10)
-    at getNombrecuenta (file:///C:/Users/JORGE%201305/Desktop/abencoado-backend/src/planCuenta/controllerCuenta.js:49:25)
-    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
-MulterError: Unexpected field
-    at wrappedFileFilter (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\multer\index.js:41:19)
-    at Multipart.<anonymous> (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\multer\lib\make-middleware.js:183:7)
-    at Multipart.emit (node:events:518:28)
-    at HeaderParser.cb (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\busboy\lib\types\multipart.js:358:14)
-    at HeaderParser.push (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\busboy\lib\types\multipart.js:162:20)
-    at SBMH.ssCb [as _cb] (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\busboy\lib\types\multipart.js:394:37)
-    at feed (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\streamsearch\lib\sbmh.js:219:14)
-    at SBMH.push (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\streamsearch\lib\sbmh.js:104:16)
-    at Multipart._write (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\busboy\lib\types\multipart.js:567:19)
-    at writeOrBuffer (node:internal/streams/writable:572:12)
-MulterError: Unexpected field
-    at wrappedFileFilter (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\multer\index.js:41:19)
-    at Multipart.<anonymous> (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\multer\lib\make-middleware.js:183:7)
-    at Multipart.emit (node:events:518:28)
-    at HeaderParser.cb (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\busboy\lib\types\multipart.js:358:14)
-    at HeaderParser.push (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\busboy\lib\types\multipart.js:162:20)
-    at SBMH.ssCb [as _cb] (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\busboy\lib\types\multipart.js:394:37)
-    at feed (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\streamsearch\lib\sbmh.js:219:14)
-    at SBMH.push (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\streamsearch\lib\sbmh.js:104:16)
-    at Multipart._write (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\busboy\lib\types\multipart.js:567:19)
-    at writeOrBuffer (node:internal/streams/writable:572:12)
-Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
-    at ServerResponse.setHeader (node:_http_outgoing:700:11)
-    at ServerResponse.header (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:686:10)
-    at ServerResponse.json (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:249:10)
-    at getNombrecuenta (file:///C:/Users/JORGE%201305/Desktop/abencoado-backend/src/planCuenta/controllerCuenta.js:55:25)
-    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
-MulterError: Unexpected field
-    at wrappedFileFilter (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\multer\index.js:41:19)
-    at Multipart.<anonymous> (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\multer\lib\make-middleware.js:183:7)
-    at Multipart.emit (node:events:518:28)
-    at HeaderParser.cb (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\busboy\lib\types\multipart.js:358:14)
-    at HeaderParser.push (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\busboy\lib\types\multipart.js:162:20)
-    at SBMH.ssCb [as _cb] (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\busboy\lib\types\multipart.js:394:37)
-    at feed (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\streamsearch\lib\sbmh.js:219:14)
-    at SBMH.push (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\streamsearch\lib\sbmh.js:104:16)
-    at Multipart._write (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\busboy\lib\types\multipart.js:567:19)
-    at writeOrBuffer (node:internal/streams/writable:572:12)
-MulterError: Unexpected field
-    at wrappedFileFilter (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\multer\index.js:41:19)
-    at Multipart.<anonymous> (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\multer\lib\make-middleware.js:183:7)
-    at Multipart.emit (node:events:518:28)
-    at HeaderParser.cb (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\busboy\lib\types\multipart.js:358:14)
-    at HeaderParser.push (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\busboy\lib\types\multipart.js:162:20)
-    at SBMH.ssCb [as _cb] (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\busboy\lib\types\multipart.js:394:37)
-    at feed (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\streamsearch\lib\sbmh.js:219:14)
-    at SBMH.push (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\streamsearch\lib\sbmh.js:104:16)
-    at Multipart._write (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\busboy\lib\types\multipart.js:567:19)
-    at writeOrBuffer (node:internal/streams/writable:572:12)
 Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
     at ServerResponse.setHeader (node:_http_outgoing:700:11)
     at ServerResponse.header (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:686:10)
     at ServerResponse.send (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:163:12)
     at ServerResponse.json (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:252:15)
     at getAllLibro (file:///C:/Users/JORGE%201305/Desktop/abencoado-backend/src/libroDiario/controllerLibroDiario.js:158:25)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (node:_http_outgoing:700:11)
+    at ServerResponse.header (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:686:10)
+    at ServerResponse.send (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:163:12)
+    at ServerResponse.json (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:252:15)
+    at getLibroDiario (file:///C:/Users/JORGE%201305/Desktop/abencoado-backend/src/libroDiario/controllerLibroDiario.js:28:25)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (node:_http_outgoing:700:11)
+    at ServerResponse.header (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:686:10)
+    at ServerResponse.send (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:163:12)
+    at ServerResponse.json (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:252:15)
+    at getLibroDiario (file:///C:/Users/JORGE%201305/Desktop/abencoado-backend/src/libroDiario/controllerLibroDiario.js:28:25)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (node:_http_outgoing:700:11)
+    at ServerResponse.header (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:686:10)
+    at ServerResponse.send (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:163:12)
+    at ServerResponse.json (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:252:15)
+    at getLibroDiario (file:///C:/Users/JORGE%201305/Desktop/abencoado-backend/src/libroDiario/controllerLibroDiario.js:28:25)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (node:_http_outgoing:700:11)
+    at ServerResponse.header (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:686:10)
+    at ServerResponse.send (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:163:12)
+    at ServerResponse.json (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:252:15)
+    at getAllLibro (file:///C:/Users/JORGE%201305/Desktop/abencoado-backend/src/libroDiario/controllerLibroDiario.js:158:25)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (node:_http_outgoing:700:11)
+    at ServerResponse.header (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:686:10)
+    at ServerResponse.send (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:163:12)
+    at ServerResponse.json (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:252:15)
+    at getLibroDiario (file:///C:/Users/JORGE%201305/Desktop/abencoado-backend/src/libroDiario/controllerLibroDiario.js:28:25)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (node:_http_outgoing:700:11)
+    at ServerResponse.header (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:686:10)
+    at ServerResponse.send (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:163:12)
+    at ServerResponse.json (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:252:15)
+    at getLibroDiario (file:///C:/Users/JORGE%201305/Desktop/abencoado-backend/src/libroDiario/controllerLibroDiario.js:28:25)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (node:_http_outgoing:700:11)
+    at ServerResponse.header (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:686:10)
+    at ServerResponse.send (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:163:12)
+    at ServerResponse.json (C:\Users\JORGE 1305\Desktop\abencoado-backend\node_modules\express\lib\response.js:252:15)
+    at getLibroDiario (file:///C:/Users/JORGE%201305/Desktop/abencoado-backend/src/libroDiario/controllerLibroDiario.js:28:25)
     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
